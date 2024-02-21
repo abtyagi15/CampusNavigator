@@ -1,9 +1,8 @@
 import React from 'react'
 import Navbar from '../components/common/Navbar'
-import HeroSection from '../components/core/HomePage/HeroSection'
 import Footer from '../components/common/Footer'
-
-const Home = () => {
+import LoginForm from '../components/core/LoginPage/LoginForm'
+const Login = () => {
   return (
     <div className='h-screen'>
         <div >
@@ -11,7 +10,7 @@ const Home = () => {
                 <Navbar />
             </div>
             <div>
-                <HeroSection />
+                <LoginForm />
             </div>
             <div>
                 <Footer/>
@@ -21,4 +20,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default Login

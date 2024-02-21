@@ -5,7 +5,7 @@ import ForwardArrow from "../../assests/ForwardArrow.svg";
 
 const Footer = () => {
   return (
-    <div>
+    <div className="max-w-[1292px] flex flex-col mx-auto">
       <div className="relative montserrat h-[26.34px]">
         <div className="flex item-center absolute gap-[1px]">
           <img src={Logo} alt="Logo" className="w-[27.16px]" />

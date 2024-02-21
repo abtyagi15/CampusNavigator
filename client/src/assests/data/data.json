@@ -1,0 +1,13 @@
+{
+  "skills": [
+    { "id": 1, "name": "Machine Learning/AI" },
+    { "id": 2, "name": "Python" },
+    { "id": 3, "name": "Data Science" },
+    { "id": 4, "name": "Java" },
+    { "id": 5, "name": "C++/C" },
+    { "id": 6, "name": "DSA (Data Structures and Algorithms)" },
+    { "id": 7, "name": "SQL" },
+    { "id": 8, "name": "MS-Office/MS-Word" },
+    { "id": 9, "name": "UI/UX" }
+  ]
+}
