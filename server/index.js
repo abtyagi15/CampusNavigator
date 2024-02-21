@@ -1,7 +1,8 @@
 const express = require('express');
 const app = express();
 
-const PORT = 3001;
+require('dotenv').config();
+const PORT = process.env.PORT || 4000;
 
 const users = {
     email: "myemail@gmail.com",
