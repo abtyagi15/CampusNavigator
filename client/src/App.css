@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* <uniquifier>: Use a uniquifier for the class name */
+ /* <weight>: Use a value from 100 to 900 */
+
+.montserrat{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+/* .montserrat-<uniquifier> */
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
