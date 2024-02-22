@@ -14,7 +14,7 @@ app.use(express.json());
 const cors = require('cors');
 app.use(
     cors({
-        origin: "http://localhost:3000",
+        origin: "https://newcampusnavigator.vercel.app",
         credentials: true, 
     })
 )
