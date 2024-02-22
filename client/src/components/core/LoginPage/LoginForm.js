@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const LoginForm = () => {
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -14,11 +15,12 @@ const LoginForm = () => {
       };
     });
     console.log(formData);
+    console.log(backendUrl);
   }
   async function submitHandler(event){
     event.preventDefault();
     try{
-        const response = await fetch("http://localhost:3001/login",{
+        const response = await fetch(`${backendUrl}/login`,{
             method:"POST",
             headers:{
                 "Content-Type":"application/json"
@@ -27,6 +29,7 @@ const LoginForm = () => {
         })
         const data = await response.json();
         console.log(data);
+        
     }catch(err){
       console.log(err);
     }
