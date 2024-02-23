@@ -37,6 +37,36 @@ app.post('/login', (req, res) => {
     }
 });
 
+const runPredictScript = require('./prediction_ml_model/model_access_script');
+
+app.post('/predict', (req,res) => {
+    try{
+        const data = req.body;
+        console.log(data);
+
+        const inputJson = JSON.stringify(data);
+
+        runPredictScript(inputJson,(err,result)=>{
+            if(err){
+                console.error("The error is",err);
+            }
+            else{
+                console.log("The result is",result);
+                res.json({
+                    success: true,
+                    message: "Prediction done successfully",
+                    result: result.prediction
+                });
+            }
+        });
+      
+        console.log("This is sent by postman",data);
+
+    }catch(e){
+        console.log(e);
+    }
+})
+
 app.get('/login', (req, res) => {
     res.status(200).json({
         message: "Hello World",
