@@ -3,6 +3,7 @@ import skillsData from "../../../assests/data/data.json";
 import { useState } from "react";
 
 const PredictionForm = () => {
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
   const [formData, setFormData] = useState({
     Branch: "",
     Gender: "",
@@ -29,17 +30,21 @@ const PredictionForm = () => {
   }
 
   async function submitHandler(event) {
-    event.preventDefault();
-    console.log(formData);
-    const response = await fetch("http://localhost:3001/predict", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(formData),
-    });
-    const data = await response.json();
-    console.log(data);
+    try {
+      event.preventDefault();
+      console.log(formData);
+      const response = await fetch(`${backendUrl}/predict`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      console.log(data);
+    } catch (err) {
+      console.log(err);
+    }
   }
 
   return (
