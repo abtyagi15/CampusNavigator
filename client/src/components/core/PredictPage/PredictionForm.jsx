@@ -3,43 +3,41 @@ import skillsData from "../../../assests/data/data.json";
 import { useState } from "react";
 
 const PredictionForm = () => {
-
   const [formData, setFormData] = useState({
-    cgpa: "",
-    sgpa: "",
-    percentage12: "",
-    percentage10: "",
-    gender: "",
-    branch: "",
-    internship: "",
-    skills: [],
+    Branch: "",
+    Gender: "",
+    tenth_percentage: "",
+    twelfth_percentage: "",
+    CGPA_Till_sixth: "",
+    sixth_Sem_SGPA: "",
+    Internship: "",
+    Skills: [],
   });
-
 
   function changeHandler(event) {
     console.log("This is event ", event);
     const { name, value } = event.target;
-    
+
     setFormData((prev) => {
       return {
         ...prev,
-        [name]: (name==='skills')?[...prev.skills,value] :value
+        [name]: name === "skills" ? [...prev.skills, value] : value,
       };
     });
-    console.log(formData);
-    console.log("This is formData skills ",formData.skills);
+    // console.log(formData);
+    // console.log("This is formData skills ",formData.skills);
   }
 
   async function submitHandler(event) {
     event.preventDefault();
+    console.log(formData);
     const response = await fetch("http://localhost:3001/predict", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(formData)
-      }
-    );
+      body: JSON.stringify(formData),
+    });
     const data = await response.json();
     console.log(data);
   }
@@ -53,7 +51,7 @@ const PredictionForm = () => {
             <p>What is your CGPA</p>
             <input
               type="number"
-              name="cgpa"
+              name="CGPA_Till_sixth"
               className="border"
               onChange={changeHandler}
               value={formData.cgpa}
@@ -63,7 +61,7 @@ const PredictionForm = () => {
             <p>What is your SGPA in 6th semester</p>
             <input
               type="number"
-              name="sgpa"
+              name="sixth_Sem_SGPA"
               className="border"
               onChange={changeHandler}
               value={formData.sgpa}
@@ -73,7 +71,7 @@ const PredictionForm = () => {
             <p>What was your percentage in 12th class?</p>
             <input
               type="number"
-              name="percentage12"
+              name="twelfth_percentage"
               className="border"
               onChange={changeHandler}
               value={formData.percentage12}
@@ -83,7 +81,7 @@ const PredictionForm = () => {
             <p>What was your percentage in 10th class?</p>
             <input
               type="number"
-              name="percentage10"
+              name="tenth_percentage"
               className="border"
               onChange={changeHandler}
               value={formData.percentage10}
@@ -97,8 +95,8 @@ const PredictionForm = () => {
               <label className="flex">
                 <input
                   type="radio"
-                  name="gender"
-                  value="male"
+                  name="Gender"
+                  value="Male"
                   onChange={changeHandler}
                 />
                 <p>Male</p>
@@ -106,8 +104,8 @@ const PredictionForm = () => {
               <label className="flex">
                 <input
                   type="radio"
-                  name="gender"
-                  value="female"
+                  name="Gender"
+                  value="Female"
                   onChange={changeHandler}
                 />
                 <p>Female</p>
@@ -117,12 +115,12 @@ const PredictionForm = () => {
           <label>
             <p>Provide Your Branch</p>
             <select
-              name="branch"
+              name="Branch"
               value={formData.branch}
               onChange={changeHandler}
             >
               <option value="">-- Select Branch --</option>
-              <option value="Computer Science and Engineering">
+              <option value="Computer Science & Engineering">
                 Computer Science and Engineering
               </option>
               <option n value="Mechanical Engineering">
@@ -152,8 +150,8 @@ const PredictionForm = () => {
               <label className="flex">
                 <input
                   type="radio"
-                  name="internship"
-                  value="yes"
+                  name="Internship"
+                  value="Yes"
                   onChange={changeHandler}
                 />
                 <p>Yes</p>
@@ -161,8 +159,8 @@ const PredictionForm = () => {
               <label className="flex">
                 <input
                   type="radio"
-                  name="internship"
-                  value="no"
+                  name="Internship"
+                  value="No"
                   onChange={changeHandler}
                 />
                 <p>No</p>
@@ -172,17 +170,24 @@ const PredictionForm = () => {
           <label>
             <p>Provide Your Skills</p>
             <select
-              name="skills"
-              value={formData.skills}
+              name="Skills"
+              value={formData.Skills}
               onChange={changeHandler}
             >
               <option>-- Select Skills --</option>
               {skillsData.skills.map((skill) => (
-                <option key={skill.id} value={skill.name}>{skill.name}</option>
+                <option key={skill.id} value={skill.name}>
+                  {skill.name}
+                </option>
               ))}
             </select>
           </label>
-          <button className="border px-[15px] py-[10px] rounded-[4px] text-center" onClick={submitHandler}>Predict</button>
+          <button
+            className="border px-[15px] py-[10px] rounded-[4px] text-center"
+            onClick={submitHandler}
+          >
+            Predict
+          </button>
         </div>
       </form>
     </div>
