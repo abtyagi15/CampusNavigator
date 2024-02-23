@@ -3,6 +3,7 @@ import skillsData from "../../../assests/data/data.json";
 import { useState } from "react";
 
 const PredictionForm = () => {
+
   const [formData, setFormData] = useState({
     cgpa: "",
     sgpa: "",
@@ -14,16 +15,33 @@ const PredictionForm = () => {
     skills: [],
   });
 
+
   function changeHandler(event) {
     console.log("This is event ", event);
     const { name, value } = event.target;
+    
     setFormData((prev) => {
       return {
         ...prev,
-        [name]: value,
+        [name]: (name==='skills')?[...prev.skills,value] :value
       };
     });
     console.log(formData);
+    console.log("This is formData skills ",formData.skills);
+  }
+
+  async function submitHandler(event) {
+    event.preventDefault();
+    const response = await fetch("http://localhost:3001/predict", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData)
+      }
+    );
+    const data = await response.json();
+    console.log(data);
   }
 
   return (
@@ -153,18 +171,18 @@ const PredictionForm = () => {
           </label>
           <label>
             <p>Provide Your Skills</p>
-            <select name="skills" value={formData.value} onChange={changeHandler}>
-              <option value="">-- Select Skills --</option>
+            <select
+              name="skills"
+              value={formData.skills}
+              onChange={changeHandler}
+            >
+              <option>-- Select Skills --</option>
               {skillsData.skills.map((skill) => (
-                <option value={skill.name}>
-                  <div key={skill.id} className="flex">
-                    <input type="checkbox" />
-                    <p>{skill.name}</p>
-                  </div>
-                </option>
+                <option key={skill.id} value={skill.name}>{skill.name}</option>
               ))}
             </select>
           </label>
+          <button className="border px-[15px] py-[10px] rounded-[4px] text-center" onClick={submitHandler}>Predict</button>
         </div>
       </form>
     </div>
