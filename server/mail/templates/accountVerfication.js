@@ -1,30 +1,68 @@
 const accountVerificationOTP = (otp) => {
-    return `<!DOCTYPE html>
+  return `<!DOCTYPE html>
     <html lang="en">
+    
     <head>
-        <title>OTP for account verification</title>
-        <style>
-            .class {
-                text-align: center;
-                padding: 2px;
-            }
-            .otp{
-                font-size: 20px;
-                font-weight: bold;
-                color: blue;
-            }
-            .text-black{
-                color: black;
-            }
-        </style>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <style>
+        body {
+          font-family: 'Arial', sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f8f8f8;
+          text-align: center;
+        }
+    
+        header {
+          background-color: #333;
+          color: #fff;
+          padding: 15px;
+        }
+    
+        section {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 20px;
+        }
+    
+       
+    
+        p {
+          color: #333;
+          font-size: 18px;
+   
+        }
+    
+        
+    
+        @media screen and (max-width: 600px) {
+          section {
+            padding: 10px;
+          }
+    
+          p {
+            font-size: 16px;
+          }
+        }
+      </style>
+      <title>Apology Webpage</title>
     </head>
-    <body class="text-black">
-    <h1 class="center" >Welcome to CampusNavigator</h1>
-    <h2 class="center" >Verify Your Email Address</h2>
-    <div class="center">
-        <p>Use the following code</p>
-        <p class="otp" >${otp}</p>
-        <p>This code is only valid for 5 minutes</p>
-    </div>
-    </body>`
-}
+    
+    <body>
+    
+      <h1>Welcome to our app</h1>    
+      <section>
+        <p>Account Verification OTP</p>
+        <p><strong>${otp}</strong></p>
+        <p>If you did not create an account or if you have any questions, please disregard this email.</p>
+      </section>
+    
+    </body>
+    
+    </html>`;
+};
+
+module.exports = accountVerificationOTP;
