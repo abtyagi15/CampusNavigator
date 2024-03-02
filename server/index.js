@@ -13,7 +13,7 @@ app.use(express.json());
 const cors = require('cors');
 app.use(
     cors({
-        origin: "*",
+        origin: "https://newcampusnavigator.vercel.app",
         credentials: true, 
     })
 )
