@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { SignupContext } from "../../../context/SignupContext";
 
 const SignupForm = () => {
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
   const navigate = useNavigate();
   const SignupData = useContext(SignupContext);
 
@@ -40,7 +42,7 @@ const SignupForm = () => {
       }
 
       event.preventDefault();
-      const response = await fetch("http://localhost:3001/api/v1/signup", {
+      const response = await fetch(`${backendUrl}/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

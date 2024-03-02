@@ -3,7 +3,7 @@ import { SignupContext } from "../../../context/SignupContext";
 import { useNavigate } from "react-router-dom";
 
 const VerifyEmailForm = () => {
-  // const backendUrl = process.env.REACT_APP_BACKEND_URL;
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
   const navigate = useNavigate(); // for navigation
 
   const SignupData = useContext(SignupContext);
@@ -31,7 +31,7 @@ const VerifyEmailForm = () => {
         otp: userForm.otp,
       };
         
-      const response = await fetch("http://localhost:3001/api/v1/verify-email", {
+      const response = await fetch(`${backendUrl}/verify-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
