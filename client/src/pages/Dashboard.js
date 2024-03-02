@@ -1,9 +1,9 @@
 import React from "react";
 import Navbar from "../components/common/Navbar";
-import SignupForm from "../components/core/SignupPage/SignupForm";  
+import DashboardPage from "../components/core/DashboardPage/DashboardPage";  
 import Footer from "../components/common/Footer";
 
-export const Signup = () => {
+export const Dashboard = () => {
   return (
     <div className="h-screen">
       <div>
@@ -11,7 +11,7 @@ export const Signup = () => {
           <Navbar />
         </div>
         <div>
-          <SignupForm />
+          <DashboardPage />
         </div>
         <div>
           <Footer />

@@ -1,9 +1,9 @@
 import React from "react";
 import Navbar from "../components/common/Navbar";
-import SignupForm from "../components/core/SignupPage/SignupForm";  
+import VerifyEmailForm from "../components/core/VerifyEmailPage/VerifyEmailForm";  
 import Footer from "../components/common/Footer";
 
-export const Signup = () => {
+export const VerifyEmail = () => {
   return (
     <div className="h-screen">
       <div>
@@ -11,7 +11,7 @@ export const Signup = () => {
           <Navbar />
         </div>
         <div>
-          <SignupForm />
+          <VerifyEmailForm />
         </div>
         <div>
           <Footer />
