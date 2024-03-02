@@ -25,7 +25,9 @@ const predictRoute = require('./routes/Predict');
 app.use('/api/v1',predictRoute);
 
 
-
+app.get('/', (req, res) => {
+    res.send('Welcome to CampusNavigator');
+})
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
