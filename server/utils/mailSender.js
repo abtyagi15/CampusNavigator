@@ -1,16 +1,17 @@
 const nodemailer = require("nodemailer");
+require("dotenv").config();
 
-const mailSennder = async (email, title, body) => {
+const mailSender = async (email, title, body) => {
   try {
-    const testAccount = nodemailer.createTestAccount();
+    // const testAccount = nodemailer.createTestAccount();
 
     let transporter = nodemailer.createTransport({
-      host: "smtp.forwardemail.net",
+      host: process.env.HOST_MAILER,
       port: 465,
       secure: true,
       auth: {
-        user: testAccount.email,
-        pass: testAccount.pass,
+        user: process.env.AUTH_USER,
+        pass: process.env.AUTH_PASS,
       },
     });
 
@@ -29,4 +30,4 @@ const mailSennder = async (email, title, body) => {
   }
 };
 
-moduele.exports = mailSender;
+module.exports = mailSender;
