@@ -4,8 +4,14 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import { Signup } from './pages/Signup';
 import Predict from './pages/Predict';
+import { VerifyEmail } from './pages/VerifyEmail';
+// import { useContext } from 'react';
+// import { SignupContext } from './context/SignupContext';
+import {Dashboard} from './pages/Dashboard';
 
 function App() {
+  // const contextState = useContext(SignupContext);
+  // console.log("contextState",contextState);
   return (
     <>
       <Routes>
@@ -13,6 +19,8 @@ function App() {
         <Route path='/login' element={<Login/>} />
         <Route path='/signup' element={<Signup/>} />
         <Route path='/predict' element={<Predict/>} />
+        <Route path='/verify-email' element={<VerifyEmail/>} />
+        <Route path='/dashboard' element={<Dashboard/>} />
       </Routes>
     </>
   );
