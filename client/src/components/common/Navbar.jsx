@@ -1,9 +1,11 @@
 import React from "react";
 import Logo from "../../assests/LogoImage.png";
 import CurvedLine from "../../assests/curveUnderline.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation();
+  const pathname = location.pathname;
   return (
     <div className="flex justify-between max-w-[1292px] mx-auto my-[42px] items-center">
       <Link to="/">
@@ -23,9 +25,9 @@ const Navbar = () => {
         <div className="text-[#3652DD] border-2 border-[#3652DD] text-[18px] px-[15px] py-[17px] rounded-[4px]">
           Share Your Experience
         </div>
-        <Link to="/login">
+        <Link to={pathname=== "/signup" ? "/login" : "/signup"}>
           <div className="text-[18px] bg-[#3652DD] px-[30px] py-[17px] text-white rounded-[4px] ">
-            LOGIN
+            {pathname === "/signup" ? "LOGIN" : "SIGNUP"}
           </div>
         </Link>
       </div>
