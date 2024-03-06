@@ -14,6 +14,155 @@
     { "id": 12, "name": "Cloud Computing" },
     { "id": 13, "name": "Graphic Designing" },
     { "id": 14, "name": "Web Development" }
+  ],
+  "postcards": [
+    {
+      "id": 1,
+      "author": "John Doe",
+      "heading": "Technology Trends",
+      "creationDate": "1h",
+      "description": "In the ever-evolving landscape of technology, we delve deep into the latest trends in AI and Machine Learning. Join me on this exploration as we uncover the groundbreaking advancements that are shaping the future. From intelligent algorithms to the ethical considerations of AI, there's much to unravel and discuss in this dynamic field",
+      "likes": 5,
+      "comments": [
+        {
+          "author": "CommenterA",
+          "text": "Interesting insights!"
+        },
+        {
+          "author": "CommenterB",
+          "text": "I agree, the tech landscape is evolving rapidly."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "author": "Anonyms",
+      "heading": "Job Opportunity",
+      "creationDate": "3h",
+      "description": "We are thrilled to announce an exciting job opportunity for a skilled Frontend Developer to join our innovative team. As a key member, you will have the chance to contribute to cutting-edge projects, collaborate with talented professionals, and shape the future of web development. If you're passionate about creating exceptional user experiences and love tackling challenges, this is the perfect role for you. Don't miss out on this chance to elevate your career! Apply now and be part of our dynamic journey.",
+      "likes": 3,
+      "comments": [
+        {
+          "author": "CommenterC",
+          "text": "Thanks for sharing!"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "author": "Alice",
+      "heading": "Learning React",
+      "creationDate": "5h",
+      "description": "Embarking on the thrilling journey of learning React! Join me as I share my insights, challenges, and triumphs in mastering this powerful JavaScript library. Along the way, I'll be seeking valuable tips and resources from the community. Whether you're a React enthusiast or just starting out, your contributions and support are highly appreciated. Let's code and learn together!",
+      "likes": 7,
+      "comments": [
+        {
+          "author": "CommenterD",
+          "text": "Great initiative! Keep it up."
+        },
+        {
+          "author": "CommenterE",
+          "text": "I can recommend some good tutorials."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "author": "Jane Smith",
+      "heading": "General Advice",
+      "creationDate": "8h",
+      "description": "Hello everyone! 👋 I'm Jane Smith, and I'm on the exciting journey of launching a career in UX/UI design. As a passionate enthusiast in the realm of user experience, I'm seeking valuable advice and insights from the design community. If you've navigated the challenges of breaking into the field or have tips for building a strong foundation, please share your wisdom. Your guidance will be immensely appreciated as I embark on this creative endeavor. Thank you in advance for your support!",
+      "likes": 2,
+      "comments": [
+        {
+          "author": "CommenterF",
+          "text": "Consider taking online courses to build your skills."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "author": "Bob",
+      "heading": "Internship Opportunity",
+      "creationDate": "12h",
+      "description": "🚀 Exciting Internship Opportunity in Data Science! 📊 Are you a passionate Data Science enthusiast looking to gain hands-on experience? We're offering a dynamic internship where you'll work on real-world projects, collaborate with industry experts, and enhance your skills in data analysis and machine learning. Don't miss out on this chance to kickstart your career in the world of data! Apply now by submitting your resume, and let's embark on a transformative journey together.",
+      "likes": 4,
+      "comments": [
+        {
+          "author": "CommenterG",
+          "text": "I'll share this with my network!"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "author": "Anonyms",
+      "heading": null,
+      "creationDate": "15h",
+      "description": "🎉 Exciting News Teaser! 📢 Brace yourselves for something extraordinary coming your way soon! We're thrilled to share a sneak peek of the exciting developments on the horizon. Stay tuned for updates that promise to captivate, inspire, and bring positive vibes to your day. Your curiosity is our fuel, and we can't wait to unveil the surprises awaiting you. Mark your calendars and join us on this anticipation-filled journey!",
+      "likes": 10,
+      "comments": [
+        {
+          "author": "CommenterH",
+          "text": "Can't wait to hear the news!"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "author": "David",
+      "heading": "Remote Work Tips",
+      "creationDate": "1d",
+      "description": "🏡 Working from home? Dive into my curated list of Remote Work Tips to boost productivity and maintain a healthy work-life balance. From effective time management to creating an ergonomic workspace, these tips will help you navigate the challenges of remote work. Join the conversation and share your own strategies for success. Let's build a supportive community for remote professionals!",
+      "likes": 8,
+      "comments": [
+        {
+          "author": "CommenterI",
+          "text": "Remote work has its challenges, looking forward to your tips."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "author": "Eva",
+      "heading": "Networking Event",
+      "creationDate": "2d",
+      "description": "🌐 Exciting News! 🎉 I'm thrilled to announce a Virtual Networking Event happening next week. Join us for an engaging session where you can connect with like-minded professionals, expand your network, and discover exciting opportunities. Whether you're looking for collaboration, job opportunities, or simply want to meet new people in your industry, this event is for you. Save the date, clear your schedule, and get ready for an evening of meaningful connections. Stay tuned for more details!",
+      "likes": 6,
+      "comments": [
+        {
+          "author": "CommenterJ",
+          "text": "Count me in! Networking is key."
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "author": "Anonyms",
+      "heading": "Job Opening",
+      "creationDate": "3d",
+      "description": "🚀 Join Our Team as a Full Stack Developer! 🌐 We're on the lookout for a talented and passionate Full Stack Developer to be part of our dynamic team. As a key player, you'll be involved in shaping innovative solutions, collaborating with cross-functional teams, and contributing to the success of exciting projects. If you have a strong background in both frontend and backend development, we invite you to seize this opportunity and apply now. Take your career to new heights with us!",
+      "likes": 9,
+      "comments": [
+        {
+          "author": "CommenterK",
+          "text": "Thanks for sharing job opportunities!"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "author": "Michael",
+      "heading": "Tips for Interviews",
+      "creationDate": "4d",
+      "description": "🚀 Mastering Technical Interviews: A Comprehensive Guide! 💻 Join me on a journey where I'll be sharing invaluable tips and insights for acing technical interviews in the realm of software development. From tackling coding challenges to showcasing your problem-solving skills, we'll explore the strategies that can elevate your interview performance. Whether you're a seasoned developer or just starting your career, these tips are tailored to help you succeed in landing your dream job. Stay tuned for a wealth of knowledge and confidence-building insights!",
+      "likes": 12,
+      "comments": [
+        {
+          "author": "CommenterL",
+          "text": "These tips are invaluable! Thanks for sharing."
+        }
+      ]
+    }
   ]
 }
-
