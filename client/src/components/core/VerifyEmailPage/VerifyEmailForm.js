@@ -40,7 +40,7 @@ const VerifyEmailForm = () => {
       });
       const data = await response.json();
       if(data.success){
-        navigate('/dashboard');
+        navigate('/home');
       }
       else{
         alert("Invalid OTP. Please try again.");
