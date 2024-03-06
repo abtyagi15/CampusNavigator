@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { SignupContext } from "../../../context/SignupContext";
 
 const SignupForm = () => {
-  const backendUrl = process.env.REACT_APP_BACKEND_URL;
+  const backendUrl = process.env.REACT_APP_BACKEND_URL || "http://localhost:3001/api/v1";
 
   const navigate = useNavigate();
   const SignupData = useContext(SignupContext);
@@ -114,7 +114,7 @@ const SignupForm = () => {
           />
         </label>
         <div
-          className="text-[20px] rounded-[32px] bg-[#aaaaaa] text-white text-center my-[24px] py-[21px]"
+          className="text-[20px] rounded-[32px] bg-[#aaaaaa] text-white text-center my-[24px] py-[21px] cursor-pointer"
           onClick={submitHandler}
         >
           Sign up
