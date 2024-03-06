@@ -7,7 +7,8 @@ import Predict from './pages/Predict';
 import { VerifyEmail } from './pages/VerifyEmail';
 // import { useContext } from 'react';
 // import { SignupContext } from './context/SignupContext';
-import {Dashboard} from './pages/Dashboard';
+import UserHome from './pages/UserHome';
+
 
 function App() {
   // const contextState = useContext(SignupContext);
@@ -20,7 +21,7 @@ function App() {
         <Route path='/signup' element={<Signup/>} />
         <Route path='/predict' element={<Predict/>} />
         <Route path='/verify-email' element={<VerifyEmail/>} />
-        <Route path='/dashboard' element={<Dashboard/>} />
+        <Route path='/home' element={<UserHome/>} />
       </Routes>
     </>
   );
