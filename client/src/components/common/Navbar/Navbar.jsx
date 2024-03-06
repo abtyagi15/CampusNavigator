@@ -1,7 +1,9 @@
 import React from "react";
-import Logo from "../../assests/LogoImage.png";
-import CurvedLine from "../../assests/curveUnderline.svg";
+import Logo from "../../../assests/LogoImage.png";
+import CurvedLine from "../../../assests/curveUnderline.svg";
 import { Link, useLocation } from "react-router-dom";
+import NoAuth from "./NoAuth";
+import WithAuth from "./WithAuth";
 
 const Navbar = () => {
   const location = useLocation();
@@ -21,16 +23,12 @@ const Navbar = () => {
           </div>
         </div>
       </Link>
-      <div className="flex w-[440px] justify-between items-center">
-        <div className="text-[#3652DD] border-2 border-[#3652DD] text-[18px] px-[15px] py-[17px] rounded-[4px]">
-          Share Your Experience
-        </div>
-        <Link to={pathname=== "/signup" ? "/login" : "/signup"}>
-          <div className="text-[18px] bg-[#3652DD] px-[30px] py-[17px] text-white rounded-[4px] ">
-            {pathname === "/signup" ? "LOGIN" : "SIGNUP"}
-          </div>
-        </Link>
-      </div>
+
+      {pathname === "/home" ? (
+        <WithAuth pathname={pathname} />
+      ) : (
+        <NoAuth pathname={pathname} />
+      )}
     </div>
   );
 };
